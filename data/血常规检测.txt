@@ -1,0 +1,23 @@
+血常规包括：
+
+红细胞计数（red blood cells RBC）
+血红蛋白浓度（hemoglobin Hb）
+血细胞比容（hematocrit Hct）
+
+平均红细胞容积（mean corpuscular volume MCV）
+平均红细胞血红蛋白量（mean corpuscular hemoglobin MCH）
+平均红细胞血红蛋白浓度（mean corpuscular hemoglobin concentration MCHC）
+
+红细胞容积分布宽度（red blood cell volume distribution width RDW）
+
+白细胞计数（white blood cells WBC）
+白细胞分类计数：
+	中性粒细胞（neutrophil）
+	淋巴细胞（lymphocyte）
+	单核细胞（monocyte）
+	嗜酸性粒细胞（eosinophilia）
+	嗜碱性粒细胞（basophil）
+
+血小板计数（platelet PLT）
+平均血小板体积（mean platelet volume MPV）
+血小板比容（plateletocrit PCT）
