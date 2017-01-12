@@ -25,3 +25,22 @@ class Client(Form):
     pct = FloatField(u'PCT (plateletocrit) *100% :', validators = [InputRequired()])
 
     submit = SubmitField(u'Submit')
+
+class Modify1(Form):
+    item = SelectField(u'Item :', choices=[('mcv', 'mcv'), ('hb', 'hb')])
+    info = StringField(u'Info :', validators = [InputRequired()])
+    submit = SubmitField(u'Submit')
+
+class Modify2(Form):
+    name = SelectField(u'Disease Name :', choices=[('microcytic anemia', 'microcytic anemia')])
+    item = SelectField(u'Item :',  choices=[('mcv', 'mcv'), ('hb', 'hb')])
+    left = FloatField(u'Value Left :', validators = [InputRequired()])
+    right = FloatField(u'Value Right :', validators = [InputRequired()])
+    submit = SubmitField(u'Submit')
+
+class Modify3(Form):
+    name = SelectField(u'Disease Name :', choices=[('iron deficiency anemia', 'iron deficiency anemia')])
+    item = SelectField(u'Item :',  choices=[('hb', 'hb')])
+    center = FloatField(u'Average(\mu) :', validators = [InputRequired()])
+    diff = FloatField(u'Differential(\sigma) :', validators = [InputRequired()])
+    submit = SubmitField(u'Submit')

@@ -4,8 +4,9 @@
 
 {% block head %}
 {{ super() }}
-<link rel="shortcut icon" href="{{ url_for('static', filename='icon.jpg') }}" type="image/x-icon">
-<link rel="icon" href="{{ url_for('static', filename='icon.jpg') }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ url_for('static', filename='image/icon.jpg') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='image/icon.jpg') }}" type="image/x-icon">
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 {% endblock %}
 
 {% block navbar %}
@@ -22,6 +23,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
+                <li><a href="/expert">EXPERT</a></li>
                 <li><a href="/info">MORE INFO</a></li>
             </ul>
         </div>
@@ -39,8 +41,15 @@
     {% endfor %}
 
     {% block page_content %}{% endblock %}
+
 </div>
+<footer class="footer">
+  <p class = "text-muted">Contact me: </p>
+  <p class = "text-muted">Emali: jrgao14@fudan.edu.cn</p>
+  <p class = "text-muted">Tel: 151-211-92827</p>
+</footer>
 {% endblock %}
+
 
 {% block scripts %}
 {{ super() }}

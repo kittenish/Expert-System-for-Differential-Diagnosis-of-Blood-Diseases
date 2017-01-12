@@ -8,7 +8,7 @@ rules['rbc'] = "(gender == 'male' and age != 'newborn' and rbc >= 4.0 and rbc <=
 
 rules['hb'] = "(gender == 'male' and age != 'newborn' and hb >= 120 and hb <= 160) or \
 (gender == 'female' and age != 'newborn' and hb >= 110 and hb <= 150) or \
-(age == 'newborn' and hb >= 170 and hb <= 120)"
+(age == 'newborn' and hb >= 170 and hb <= 200)"
 
 rules['hct'] = "(gender == 'male' and hct >= 0.42 and hct <= 0.49) or \
 (gender == 'female' and hct >= 0.37 and hct <= 0.48)"
@@ -29,11 +29,11 @@ rules['neu'] = "neu >= 2.0 and neu <= 7.0"
 
 rules['lym'] = "lym >= 0.8 and lym <= 4.0"
 
-rules['mon'] = "mon >= 3 and mon <= 8"
+rules['mon'] = "mon >= 0.12 and mon <= 0.8"
 
-rules['eos'] = "eos >= 0.5 and eos <= 5"
+rules['eos'] = "eos >= 0.05 and eos <= 0.5"
 
-rules['bas'] = "bas >= 0 and bas <= 1.0"
+rules['bas'] = "bas >= 0 and bas <= 0.1"
 
 rules['plt'] = "plt >= 100.0 and plt <= 300.0"
 
@@ -41,7 +41,7 @@ rules['mpv'] = "mpv >= 7 and mpv <= 11"
 
 rules['pct'] = "pct >= 0.001 and pct <= 0.003"
 
-f = open('rules_normal.txt','w')
+f = open('rules_normal.json','w')
 f.write(json.dumps(rules))
 f.close()
 
@@ -59,9 +59,9 @@ Normal Example:
     wbc = 5
     neu = 5
     lym = 3.5
-    mon = 3.5
-    eos = 3.5
-    bas = 0.5
+    mon = 0.5
+    eos = 0.3
+    bas = 0.05
     plt = 200
     mpv = 10
     pct = 0.002

@@ -2,8 +2,10 @@ from flask import Flask, render_template, session, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_wtf import Form
-from my_form import Client
+from my_form import Client, Modify1, Modify2, Modify3
 from expert_system import *
+
+global blood_result
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
@@ -24,9 +26,18 @@ def internal_server_error(e):
 def info():
     return render_template('info.html')
 
+@app.route('/expert')
+def expert():
+    form1 = Modify1()
+    form2 = Modify2()
+    form3 = Modify3()
+    return render_template('expert.html', form1 = form1, form2 = form2, form3 = form3)
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = Client()
+    global blood_result
+    blood_result = {'normal':False}
     if form.validate_on_submit():
         session['gender'] = form.gender.data
         session['age'] = form.age.data
@@ -48,11 +59,17 @@ def index():
         session['pct'] = form.pct.data
 
         #print session
-        result = expert_system(session)
-        print result
-        return redirect(url_for('index'))
+        blood_result = expert_system(session)
+        #return redirect(url_for('index'))
+        if blood_result['normal'] == True:
+            return render_template('normal.html')
+
+        else:
+            pass
+
     return render_template('index.html', form=form, name=session.get('name'))
 
 
 if __name__ == '__main__':
     app.run(debug = True)
+    #app.run()
